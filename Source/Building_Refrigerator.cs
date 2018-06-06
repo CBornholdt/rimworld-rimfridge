@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace RimFridge
 {
-    public class Building_Refrigerator : Building_Storage, IStoreSettingsParent
+    public class Building_Refrigerator : AdvancedStocking.Building_Shelf, IStoreSettingsParent
     {
         public CompPowerTrader powerComp;
 
@@ -30,6 +30,7 @@ namespace RimFridge
             this.glow = base.GetComp<CompGlower>();
             if (this.label == null || this.label.Trim().Length == 0)
                 this.label = base.def.label;
+			Log.Message(((this as AdvancedStocking.Building_Shelf) != null).ToString());
         }
 
         public override void PostMake()
@@ -268,7 +269,7 @@ namespace RimFridge
             sb.Append("RimFridge.Power".Translate());
             sb.Append(": ");
             sb.Append((string)((this.powerComp != null && this.powerComp.PowerOn) ? "On".Translate() : "Off".Translate()));
-            return sb.ToString().TrimEndNewlines();
+			return sb.ToString().TrimEndNewlines();
         }
     }
 }

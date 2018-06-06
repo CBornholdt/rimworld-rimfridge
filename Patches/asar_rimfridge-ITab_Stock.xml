@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/ThingDef[thingClass='RimFridge.Building_Refrigerator']/inspectorTabs[not(contains(.,'ITab_Stock'))]</xpath>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[thingClass='RimFridge.Building_Refrigerator']/inspectorTabs[not(contains(.,'ITab_Stock'))]</xpath>
+                <value>
+                    <li>AdvancedStocking.ITab_Stock</li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>

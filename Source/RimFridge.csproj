@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>D:\Steam\steamapps\common\RimWorld\Mods\RimFridge\Assemblies\</OutputPath>
+    <OutputPath>..\Assemblies</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -36,17 +36,21 @@
     <Reference Include="0Harmony">
       <HintPath>.\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="SaveStorageSettingsUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>.\SaveStorageSettingsUtil.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\.steam\steam\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\.steam\steam\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdvancedStocking">
+      <HintPath>..\..\..\..\.steam\steam\steamapps\common\RimWorld\Mods\AdvancedStocking-Working\Assemblies\AdvancedStocking.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -64,14 +68,33 @@
     <Compile Include="Settings\RimFridgeSettingsUtil.cs" />
     <Compile Include="Settings\Settings.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\About\About.xml">
+      <Link>About\About.xml</Link>
+    </None>
+    <None Include="..\About\ModSync.xml">
+      <Link>About\ModSync.xml</Link>
+    </None>
+    <None Include="..\About\Preview.png">
+      <Link>About\Preview.png</Link>
+    </None>
+    <None Include="..\About\PublishedFileId.txt">
+      <Link>About\PublishedFileId.txt</Link>
+    </None>
+    <None Include="..\Defs\ThingDefs_Buildings\Fridge_Building.xml">
+      <Link>Defs\ThingDefs_Buildings\Fridge_Building.xml</Link>
+    </None>
+    <None Include="..\Defs\ThoughtDefs\FrostyBeer.xml">
+      <Link>Defs\ThoughtDefs\FrostyBeer.xml</Link>
+    </None>
+    <None Include="..\Patches\asar_rimfridge-ITab_Stock.xml">
+      <Link>Patches\asar_rimfridge-ITab_Stock.xml</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Patches\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)..\About\About.xml" "$(OutDir)..\About\" /Y /I
-xcopy "$(ProjectDir)..\About\ModSync.xml" "$(OutDir)..\About\" /Y /I
-xcopy "$(ProjectDir)..\About\Preview.png" "$(OutDir)..\About\" /Y /I
-xcopy "$(ProjectDir)..\About\PublishedFileId.txt" "$(OutDir)..\About\" /Y /I
-xcopy "$(ProjectDir)..\Defs\*.*" "$(OutDir)..\Defs" /Y /I /E
-xcopy "$(ProjectDir)..\Languages\*.*" "$(OutDir)..\Languages" /Y /I /E
-xcopy "$(ProjectDir)..\Textures\*.*" "$(OutDir)..\Textures" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
+  <PropertyGroup />
+   
 </Project>

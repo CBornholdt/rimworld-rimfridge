@@ -13,6 +13,10 @@
 		<repairEffect>Repair</repairEffect>
 		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
 		<filthLeaving>BuildingRubble</filthLeaving>
+        <inspectorTabs>
+            <li>ITab_Storage</li>
+            <li>AdvancedStocking.ITab_Stock</li>
+        </inspectorTabs>
 	</ThingDef>
 
 	<ThingDef ParentName="FridgeBase">
@@ -90,9 +94,6 @@
 				<altitudeLayer>MoteOverhead</altitudeLayer>
 			</li>
 		</comps>	
-		<inspectorTabs>
-			<li>ITab_Storage</li>
-		</inspectorTabs>
 		<designationHotKey>Misc12</designationHotKey>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
@@ -180,9 +181,6 @@
 				<altitudeLayer>MoteOverhead</altitudeLayer>
 			</li>
 		</comps>	
-		<inspectorTabs>
-			<li>ITab_Storage</li>
-		</inspectorTabs>
 		<designationHotKey>Misc12</designationHotKey>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
@@ -271,9 +269,6 @@
 				<altitudeLayer>MoteOverhead</altitudeLayer>
 			</li>
 		</comps>	
-		<inspectorTabs>
-			<li>ITab_Storage</li>
-		</inspectorTabs>
 		<designationHotKey>Misc12</designationHotKey>
 		<staticSunShadowHeight>0.5</staticSunShadowHeight>
 		<surfaceType>Item</surfaceType>
